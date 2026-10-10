@@ -13,7 +13,8 @@ const contentTypes = {
   '.jpeg': 'image/jpeg',
   '.png': 'image/png',
   '.svg': 'image/svg+xml',
-  '.pdf': 'application/pdf'
+  '.pdf': 'application/pdf',
+  '.mp4': 'video/mp4'
 };
 
 const server = http.createServer((request, response) => {

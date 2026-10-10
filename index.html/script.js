@@ -119,3 +119,22 @@ if (carousel) {
   showSlide(0);
   startAutoplay();
 }
+
+// Interactive 3D mouse parallax for hero section
+const hero = document.getElementById('home');
+const portrait = document.querySelector('.portrait-frame');
+if (hero && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  hero.addEventListener('mouseleave', () => {
+    if (portrait) portrait.style.transform = '';
+  });
+  hero.addEventListener('mousemove', (e) => {
+    if (window.innerWidth <= 900) return;
+    const rect = hero.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    if (portrait) {
+      portrait.style.transform = `perspective(900px) rotateY(${x * 12}deg) rotateX(${-y * 12}deg) translateY(-5px)`;
+    }
+  });
+}
+

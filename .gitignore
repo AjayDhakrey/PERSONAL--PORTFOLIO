@@ -1,6 +1,7 @@
 node_modules/
 .vercel/
 tmp/
-*.mp4
+/gemini_generated_video_f8a61f25.mp4
 .DS_Store
 Thumbs.db
+

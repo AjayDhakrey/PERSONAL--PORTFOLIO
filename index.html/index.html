@@ -25,8 +25,16 @@
 
   <main class="container" id="main-content">
     <section class="hero" id="home">
+      <div class="hero-video-backdrop" aria-hidden="true">
+        <video class="hero-video-media" autoplay loop muted playsinline preload="auto">
+          <source src="hero-bg.mp4" type="video/mp4">
+        </video>
+        <div class="hero-video-scrim"></div>
+        <div class="hero-glow-orb orb-1"></div>
+        <div class="hero-glow-orb orb-2"></div>
+      </div>
       <div class="hero-copy">
-        <p class="eyebrow">MERN Stack Developer · Noida, India</p>
+        <p class="eyebrow"><span class="pulse-indicator"></span>MERN Stack Developer · Noida, India</p>
         <h1>Building web products that work in the real world.</h1>
         <p class="hero-summary">I develop and deploy scalable business applications with <strong>React.js</strong>, <strong>Node.js</strong>, <strong>Express.js</strong>, MongoDB, and PostgreSQL—from secure user workflows to production-ready APIs.</p>
         <div class="actions">
