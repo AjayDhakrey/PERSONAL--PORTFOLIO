@@ -168,41 +168,40 @@ if (carousel) {
     if (portrait) portrait.style.transform = '';
   });
 
-  // Digital code characters
-  const codeChars = ['0', '1', '<', '>', '/', '{', '}', ';', 'λ', 'const', 'API', 'MERN', 'NODE', 'VITE', 'SQL', '010', '101', 'REST'];
+  // Pure digital binary matrix characters (clean, crisp, no blurry text)
+  const codeChars = ['0', '1'];
 
-  // Initialize dense vertical code streams
-  const streamCount = Math.max(36, Math.floor(width / 26));
+  // Initialize crisp vertical matrix rain streams
+  const streamCount = Math.max(32, Math.floor(width / 32));
   const streams = [];
   for (let i = 0; i < streamCount; i++) {
     streams.push({
-      x: (i + Math.random() * 0.4) * (width / streamCount),
-      y: Math.random() * -height * 1.2,
-      speed: 1.4 + Math.random() * 2.8,
-      length: 10 + Math.floor(Math.random() * 12),
-      chars: Array.from({ length: 22 }, () => codeChars[Math.floor(Math.random() * codeChars.length)]),
-      opacity: 0.55 + Math.random() * 0.45,
+      x: (i + Math.random() * 0.3) * (width / streamCount),
+      y: Math.random() * -height * 1.5,
+      speed: 1.2 + Math.random() * 2.2,
+      length: 8 + Math.floor(Math.random() * 12),
+      chars: Array.from({ length: 20 }, () => codeChars[Math.floor(Math.random() * 2)]),
+      opacity: 0.35 + Math.random() * 0.4,
       changeTimer: 0
     });
   }
 
-  // Floating 3D holographic tech nodes & floating telemetry HUDs
-  const nodeCount = 22;
-  const techLabels = ['SYS: OK', 'MERN_STACK', 'API_200', 'NODE_ACTIVE', 'POSTGRES', 'REACT_V19'];
+  // Floating ambient cyber telemetry nodes
+  const nodeCount = 16;
   const nodes = [];
   for (let i = 0; i < nodeCount; i++) {
     nodes.push({
       x: Math.random() * width,
-      y: Math.random() * (height * 0.6),
-      vx: (Math.random() - 0.5) * 0.55,
-      vy: (Math.random() - 0.5) * 0.4,
-      radius: 2.5 + Math.random() * 2.5,
-      pulse: Math.random() * Math.PI * 2,
-      label: i < techLabels.length ? techLabels[i] : null
+      y: Math.random() * (height * 0.65),
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.3,
+      radius: 2 + Math.random() * 2,
+      pulse: Math.random() * Math.PI * 2
     });
   }
 
   let gridOffset = 0;
+  let radarAngle = 0;
   let lastTime = performance.now();
 
   function render(time) {
@@ -216,111 +215,136 @@ if (carousel) {
     mouseY += (targetMouseY - mouseY) * 0.08;
 
     if (portrait && !reduceMotion && window.innerWidth > 900) {
-      portrait.style.transform = `perspective(900px) rotateY(${mouseX * 10}deg) rotateX(${-mouseY * 10}deg) translateY(-5px)`;
+      portrait.style.transform = `perspective(900px) rotateY(${mouseX * 8}deg) rotateX(${-mouseY * 8}deg) translateY(-4px)`;
     }
 
     const isLight = document.body.classList.contains('light');
     ctx.clearRect(0, 0, width, height);
 
-    const horizonY = height * 0.46 + mouseY * 40;
-    const vpX = width * 0.58 + mouseX * 100;
+    // Grid horizon placed strictly below text (bottom 30% of screen)
+    const horizonY = height * 0.70 + mouseY * 20;
+    const vpX = width * 0.52 + mouseX * 80;
 
     // 1. Draw 3D Perspective Cyber Grid Floor
     ctx.save();
-    const gridSpeed = reduceMotion ? 0 : delta * 0.42;
+    const gridSpeed = reduceMotion ? 0 : delta * 0.36;
     gridOffset = (gridOffset + gridSpeed) % 1;
 
     // Horizontal perspective lines moving towards viewer
-    const horizontalLineCount = 20;
-    const currentYPositions = [];
+    const horizontalLineCount = 16;
     for (let i = 0; i < horizontalLineCount; i++) {
       const p = (i + gridOffset) / horizontalLineCount;
-      const y = horizonY + Math.pow(p, 2.2) * (height - horizonY);
+      const y = horizonY + Math.pow(p, 2.3) * (height - horizonY);
       if (y > height) continue;
-      currentYPositions.push({ y, p });
 
-      const alpha = Math.min(1, Math.pow(p, 1.4)) * (isLight ? 0.45 : 0.85);
+      const alpha = Math.min(1, Math.pow(p, 1.3)) * (isLight ? 0.35 : 0.75);
       ctx.beginPath();
       ctx.strokeStyle = isLight
         ? `rgba(8, 127, 108, ${alpha})`
-        : `rgba(104, 228, 194, ${alpha})`;
-      ctx.lineWidth = 1 + p * 1.8;
+        : `rgba(0, 240, 255, ${alpha * 0.85})`;
+      ctx.lineWidth = 1 + p * 1.5;
       ctx.moveTo(0, y);
       ctx.lineTo(width, y);
       ctx.stroke();
     }
 
     // Radial perspective lines converging to vanishing point
-    const radialCount = 30;
+    const radialCount = 28;
     for (let i = -radialCount / 2; i <= radialCount / 2; i++) {
-      const spreadX = vpX + i * (width / 11) * 1.35;
-      const alpha = Math.max(0.12, 1 - Math.abs(i) / (radialCount / 2)) * (isLight ? 0.4 : 0.75);
+      const spreadX = vpX + i * (width / 10) * 1.35;
+      const alpha = Math.max(0.1, 1 - Math.abs(i) / (radialCount / 2)) * (isLight ? 0.35 : 0.7);
 
       ctx.beginPath();
       ctx.strokeStyle = isLight
         ? `rgba(8, 127, 108, ${alpha})`
-        : `rgba(0, 229, 255, ${alpha})`;
-      ctx.lineWidth = 1.2;
+        : `rgba(0, 240, 255, ${alpha * 0.8})`;
+      ctx.lineWidth = 1.1;
       ctx.moveTo(vpX, horizonY);
       ctx.lineTo(spreadX, height);
       ctx.stroke();
-
-      // Glowing grid intersection dots on selected points
-      if (!isLight && Math.abs(i) % 3 === 0) {
-        currentYPositions.slice(-6).forEach(({ y, p }) => {
-          const ratio = (y - horizonY) / (height - horizonY);
-          const intersectX = vpX + (spreadX - vpX) * ratio;
-          ctx.beginPath();
-          ctx.arc(intersectX, y, 1.8 * p, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(104, 228, 194, ${0.8 * p})`;
-          ctx.fill();
-        });
-      }
     }
 
-    // Glowing horizon beam
+    // Glowing horizon light bar with neon cyan bloom
     const horizonGrad = ctx.createLinearGradient(0, horizonY - 14, 0, horizonY + 24);
-    horizonGrad.addColorStop(0, 'rgba(104, 228, 194, 0)');
-    horizonGrad.addColorStop(0.5, isLight ? 'rgba(8, 127, 108, 0.6)' : 'rgba(104, 228, 194, 0.75)');
-    horizonGrad.addColorStop(1, 'rgba(104, 228, 194, 0)');
+    horizonGrad.addColorStop(0, 'rgba(0, 240, 255, 0)');
+    horizonGrad.addColorStop(0.5, isLight ? 'rgba(8, 127, 108, 0.45)' : 'rgba(0, 240, 255, 0.7)');
+    horizonGrad.addColorStop(1, 'rgba(0, 240, 255, 0)');
     ctx.fillStyle = horizonGrad;
     ctx.fillRect(0, horizonY - 14, width, 38);
     ctx.restore();
 
-    // 2. Draw Digital Code Rain Streams
+    // 2. Draw Holographic Circular Radar HUD in background (upper right)
+    if (!isLight && width > 700) {
+      ctx.save();
+      const hudX = width * 0.78 + mouseX * 25;
+      const hudY = height * 0.32 + mouseY * 15;
+      const hudRadius = 64;
+      radarAngle += delta * 0.8;
+
+      ctx.strokeStyle = 'rgba(45, 212, 191, 0.16)';
+      ctx.lineWidth = 1;
+
+      // Outer ring
+      ctx.beginPath();
+      ctx.arc(hudX, hudY, hudRadius, 0, Math.PI * 2);
+      ctx.stroke();
+
+      // Middle dashed ring
+      ctx.setLineDash([4, 6]);
+      ctx.beginPath();
+      ctx.arc(hudX, hudY, hudRadius * 0.75, 0, Math.PI * 2);
+      ctx.stroke();
+
+      // Rotating radar sweep
+      ctx.setLineDash([]);
+      ctx.beginPath();
+      ctx.moveTo(hudX, hudY);
+      ctx.lineTo(hudX + Math.cos(radarAngle) * (hudRadius * 0.95), hudY + Math.sin(radarAngle) * (hudRadius * 0.95));
+      ctx.strokeStyle = 'rgba(45, 212, 191, 0.35)';
+      ctx.stroke();
+
+      // Center pulse dot
+      ctx.beginPath();
+      ctx.arc(hudX, hudY, 2.5, 0, Math.PI * 2);
+      ctx.fillStyle = '#2dd4bf';
+      ctx.fill();
+      ctx.restore();
+    }
+
+    // 3. Draw Crisp Digital Binary Code Rain Streams
     ctx.save();
-    ctx.font = '700 12px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace';
+    ctx.font = '600 12px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace';
     streams.forEach(stream => {
       if (!reduceMotion) {
-        stream.y += stream.speed * 62 * delta;
+        stream.y += stream.speed * 54 * delta;
         stream.changeTimer += delta;
-        if (stream.changeTimer > 0.1) {
+        if (stream.changeTimer > 0.15) {
           stream.changeTimer = 0;
           const idx = Math.floor(Math.random() * stream.chars.length);
-          stream.chars[idx] = codeChars[Math.floor(Math.random() * codeChars.length)];
+          stream.chars[idx] = codeChars[Math.floor(Math.random() * 2)];
         }
       }
 
-      if (stream.y > horizonY + 50) {
-        stream.y = -Math.random() * 240;
+      if (stream.y > horizonY + 30) {
+        stream.y = -Math.random() * 200;
         stream.x = Math.random() * width;
       }
 
       for (let j = 0; j < stream.length; j++) {
-        const charY = stream.y - j * 17;
-        if (charY < 0 || charY > horizonY + 35) continue;
+        const charY = stream.y - j * 16;
+        if (charY < 0 || charY > horizonY + 20) continue;
 
         const isLead = j === 0;
-        const trailAlpha = Math.max(0, (1 - j / stream.length)) * stream.opacity * (isLight ? 0.75 : 0.95);
+        const trailAlpha = Math.max(0, (1 - j / stream.length)) * stream.opacity * (isLight ? 0.65 : 0.85);
 
         if (isLead) {
           ctx.fillStyle = isLight ? '#064e3b' : '#ffffff';
-          ctx.shadowColor = isLight ? '#087f6c' : '#68e4c2';
-          ctx.shadowBlur = isLight ? 6 : 14;
+          ctx.shadowColor = '#00f0ff';
+          ctx.shadowBlur = isLight ? 4 : 10;
         } else {
           ctx.fillStyle = isLight
             ? `rgba(8, 127, 108, ${trailAlpha})`
-            : `rgba(104, 228, 194, ${trailAlpha})`;
+            : `rgba(45, 212, 191, ${trailAlpha})`;
           ctx.shadowBlur = 0;
         }
 
@@ -330,13 +354,13 @@ if (carousel) {
     });
     ctx.restore();
 
-    // 3. Draw Floating Holographic Tech Nodes & Telemetry
+    // 4. Draw Subtle Constellation Nodes
     ctx.save();
     nodes.forEach((node, i) => {
       if (!reduceMotion) {
-        node.x += node.vx * 60 * delta;
-        node.y += node.vy * 60 * delta;
-        node.pulse += delta * 2.2;
+        node.x += node.vx * 50 * delta;
+        node.y += node.vy * 50 * delta;
+        node.pulse += delta * 2;
 
         if (node.x < 0) node.x = width;
         if (node.x > width) node.x = 0;
@@ -344,35 +368,24 @@ if (carousel) {
         if (node.y > horizonY) node.y = 0;
       }
 
-      const pulseScale = 1 + Math.sin(node.pulse) * 0.28;
-      const nodeAlpha = (0.55 + Math.sin(node.pulse) * 0.3) * (isLight ? 0.7 : 0.95);
+      const pulseScale = 1 + Math.sin(node.pulse) * 0.25;
+      const nodeAlpha = (0.4 + Math.sin(node.pulse) * 0.25) * (isLight ? 0.6 : 0.85);
 
-      // Node core
       ctx.beginPath();
       ctx.arc(node.x, node.y, node.radius * pulseScale, 0, Math.PI * 2);
-      ctx.fillStyle = isLight ? `rgba(8, 127, 108, ${nodeAlpha})` : `rgba(104, 228, 194, ${nodeAlpha})`;
-      ctx.shadowColor = isLight ? '#087f6c' : '#68e4c2';
-      ctx.shadowBlur = isLight ? 8 : 16;
+      ctx.fillStyle = isLight ? `rgba(8, 127, 108, ${nodeAlpha})` : `rgba(45, 212, 191, ${nodeAlpha})`;
       ctx.fill();
 
-      // Holographic label
-      if (node.label && !isLight) {
-        ctx.font = '600 9px ui-monospace, monospace';
-        ctx.fillStyle = 'rgba(187, 247, 231, 0.65)';
-        ctx.shadowBlur = 0;
-        ctx.fillText(node.label, node.x + 8, node.y + 3);
-      }
-
-      // Connecting constellation lines
+      // Connecting faint constellation lines
       for (let j = i + 1; j < nodes.length; j++) {
         const other = nodes[j];
         const dist = Math.hypot(node.x - other.x, node.y - other.y);
-        if (dist < 140) {
-          const lineAlpha = (1 - dist / 140) * 0.42 * (isLight ? 0.6 : 0.9);
+        if (dist < 120) {
+          const lineAlpha = (1 - dist / 120) * 0.25 * (isLight ? 0.5 : 0.8);
           ctx.beginPath();
           ctx.strokeStyle = isLight
             ? `rgba(8, 127, 108, ${lineAlpha})`
-            : `rgba(104, 228, 194, ${lineAlpha})`;
+            : `rgba(45, 212, 191, ${lineAlpha})`;
           ctx.lineWidth = 1;
           ctx.moveTo(node.x, node.y);
           ctx.lineTo(other.x, other.y);
