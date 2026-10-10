@@ -28,7 +28,7 @@ menuToggle.addEventListener('click', () => {
   menuToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
 });
 
-const sectionIds = ['about', 'skills', 'experience', 'projects', 'contact'];
+const sectionIds = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
 const navLinks = Array.from(document.querySelectorAll('#navLinks a'));
 function highlightCurrentSection() {
   let active = null;

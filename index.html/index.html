@@ -8,290 +8,589 @@
   <meta name="theme-color" content="#090d16">
   <title>Ajay Dhakrey | MERN Stack Developer</title>
   <link rel="canonical" href="https://ajaydhakrey04.github.io/ajaydhakrey-portfolio/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
   <header>
     <nav class="nav-shell" aria-label="Primary navigation">
-      <a class="brand" href="#home" aria-label="Ajay Dhakrey, home"><span class="brand-mark">AD</span><span>Ajay Dhakrey</span></a>
-      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+      <a class="brand" href="#home" aria-label="Ajay Dhakrey, home">
+        <span class="brand-mark">AD</span>
+        <span>Ajay Dhakrey</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation menu">
+        <span></span><span></span><span></span>
+      </button>
       <ul id="navLinks">
-        <li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" title="Switch color theme"><span aria-hidden="true">☀</span></button>
+      <div class="nav-right-actions">
+        <a class="nav-resume-pill" href="AJAY-DHAKREY-MERN-STACK-DEVELOPER.pdf" target="_blank" rel="noopener">
+          <span>Resume</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+        </a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" title="Switch color theme">
+          <span aria-hidden="true">☀</span>
+        </button>
+      </div>
     </nav>
   </header>
 
-  <main class="container" id="main-content">
-    <section class="hero" id="home">
-      <div class="hero-cyber-stage" aria-hidden="true">
-        <canvas id="heroCyberCanvas"></canvas>
-        <div class="hero-cyber-scrim"></div>
-        <div class="hero-glow-orb orb-1"></div>
-        <div class="hero-glow-orb orb-2"></div>
-      </div>
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="pulse-indicator"></span>MERN Stack Developer · Noida, India</p>
-        <h1>Building web products that work in the real world.</h1>
-        <p class="hero-summary">I develop and deploy scalable business applications with <strong>React.js</strong>, <strong>Node.js</strong>, <strong>Express.js</strong>, MongoDB, and PostgreSQL—from secure user workflows to production-ready APIs.</p>
-        <div class="actions">
-          <a class="btn primary" href="#projects">Explore my work</a>
-          <a class="btn" href="AJAY-DHAKREY-MERN-STACK-DEVELOPER.pdf" target="_blank" rel="noopener">View résumé</a>
-          <a class="text-link" href="https://github.com/AjayDhakrey" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  <main id="main-content">
+    <!-- HERO SECTION - Preserved intact with 60fps 3D canvas and containment -->
+    <div class="hero-outer-container">
+      <section class="hero container" id="home">
+        <div class="hero-cyber-stage" aria-hidden="true">
+          <canvas id="heroCyberCanvas"></canvas>
+          <div class="hero-cyber-scrim"></div>
+          <div class="hero-glow-orb orb-1"></div>
+          <div class="hero-glow-orb orb-2"></div>
         </div>
-        <ul class="hero-facts" aria-label="Career highlights">
-          <li><strong>MERN intern</strong><span>Aflix Infotech</span></li><li><strong>B.Tech CSE</strong><span>GLA University, 2025</span></li><li><strong>Production focus</strong><span>Vercel & Render</span></li>
-        </ul>
-      </div>
-      <div class="portrait-frame"><img class="avatar" src="portfolio image.jpg" alt="Portrait of Ajay Dhakrey" width="700" height="875"></div>
-    </section>
-
-    <section id="about" class="section-grid">
-      <div><p class="section-label">About</p><h2>Full-stack thinking, from interface to deployment.</h2></div>
-      <div class="section-copy">
-        <p>I’m a Computer Science graduate and MERN Stack Developer with hands-on experience taking applications from development to production. I focus on clean, maintainable systems and user-friendly experiences.</p>
-        <p>My work includes authentication, role-based access control, REST APIs, database integration, testing, debugging, and performance optimization for real business workflows.</p>
-        <div class="timeline" aria-label="Education and training">
-          <div><span>2021–2025</span><strong>B.Tech in Computer Science</strong><small>GLA University, Mathura</small></div>
-          <div><span>2025</span><strong>MERN Stack Developer Training</strong><small>AccioJob, Noida</small></div>
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="pulse-indicator"></span>MERN Stack Developer · Noida, India</p>
+          <h1>Building web products that work in the real world.</h1>
+          <p class="hero-summary">I develop and deploy scalable business applications with <strong>React.js</strong>, <strong>Node.js</strong>, <strong>Express.js</strong>, MongoDB, and PostgreSQL—from secure user workflows to production-ready APIs.</p>
+          <div class="actions">
+            <a class="btn primary" href="#projects">Explore my work</a>
+            <a class="btn" href="AJAY-DHAKREY-MERN-STACK-DEVELOPER.pdf" target="_blank" rel="noopener">View résumé</a>
+            <a class="text-link" href="https://github.com/AjayDhakrey" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+          <ul class="hero-facts" aria-label="Career highlights">
+            <li><strong>MERN intern</strong><span>Aflix Infotech</span></li>
+            <li><strong>B.Tech CSE</strong><span>GLA University, 2025</span></li>
+            <li><strong>Production focus</strong><span>Vercel & Render</span></li>
+          </ul>
         </div>
-      </div>
-    </section>
-
-    <section id="skills">
-      <p class="section-label">Technical skills</p><h2>The stack behind my applications.</h2>
-      <div class="skills-grid">
-        <article class="skill-card"><span>01</span><h3>Frontend</h3><p>React.js, JavaScript, HTML5, CSS3, Vite</p></article>
-        <article class="skill-card"><span>02</span><h3>Backend</h3><p>Node.js, Express.js, REST APIs, authentication, RBAC</p></article>
-        <article class="skill-card"><span>03</span><h3>Data</h3><p>MongoDB, MongoDB Atlas, PostgreSQL, Supabase, MySQL</p></article>
-        <article class="skill-card"><span>04</span><h3>Delivery</h3><p>Git, GitHub, VS Code, Vercel, Render</p></article>
-      </div>
-    </section>
-
-    <section id="experience" class="section-grid">
-      <div><p class="section-label">Experience</p><h2>Building and maintaining production applications.</h2></div>
-      <article class="experience-card">
-        <div class="experience-heading"><div><h3>MERN Stack Developer Intern</h3><p>Aflix Infotech Private Limited · Agra</p></div><span>Aug 2026 – Present</span></div>
-        <ul>
-          <li>Develop and maintain full-stack applications with React, Node.js, Express, MongoDB, and REST APIs.</li>
-          <li>Work across frontend, backend, database integration, authentication, API development, testing, debugging, and optimization.</li>
-          <li>Deploy and manage frontend and backend applications using Vercel and Render.</li>
-        </ul>
-      </article>
-    </section>
-
-    <section id="projects">
-      <div class="section-heading"><div><p class="section-label">Selected work</p><h2>Business systems built for real users.</h2></div><a class="text-link" href="https://github.com/AjayDhakrey" target="_blank" rel="noopener noreferrer">GitHub profile <span aria-hidden="true">↗</span></a></div>
-      <div class="projects-grid">
-        <article class="project-card featured">
-          <div class="project-visual">
-            <div class="project-preview-mockup">
-              <div class="project-mockup-header">
-                <div class="mockup-dot red"></div>
-                <div class="mockup-dot yellow"></div>
-                <div class="mockup-dot green"></div>
-                <div class="mockup-url">school.aflix.co.in</div>
-                <a class="mockup-btn" href="https://school.aflix.co.in/login" target="_blank" rel="noopener noreferrer" aria-label="Open SchoolSphere live site">↗</a>
-              </div>
-              <div class="project-mockup-screen">
-                <img src="preview-schoolsphere.png" alt="SchoolSphere platform preview" loading="lazy" width="1280" height="800">
-                <div class="project-preview-overlay"><span>Live Preview ↗</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="project-content">
-            <p class="project-index">01 · School management</p>
-            <h3>SchoolSphere</h3>
-            <p>A full-stack platform supporting students, teachers, staff, parents, administrators, attendance, admissions, fees, payments, examinations, and academic management.</p>
-            <ul class="project-points">
-              <li>Secure authentication and RBAC across six user roles</li>
-              <li>School-level data isolation and structured backend management</li>
-              <li>Supabase PostgreSQL, secure APIs, and database migrations</li>
-            </ul>
-            <p class="tech-list">React.js · Node.js · Express.js · Supabase · PostgreSQL</p>
-            <a class="btn primary" href="https://school.aflix.co.in/login" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
-
-        <article class="project-card featured reverse">
-          <div class="project-visual">
-            <div class="project-preview-mockup">
-              <div class="project-mockup-header">
-                <div class="mockup-dot red"></div>
-                <div class="mockup-dot yellow"></div>
-                <div class="mockup-dot green"></div>
-                <div class="mockup-url">inventory.aflix.co.in</div>
-                <a class="mockup-btn" href="https://inventory.aflix.co.in/" target="_blank" rel="noopener noreferrer" aria-label="Open Stock Room live site">↗</a>
-              </div>
-              <div class="project-mockup-screen">
-                <img src="preview-stockroom.png" alt="Stock Room platform preview" loading="lazy" width="1280" height="800">
-                <div class="project-preview-overlay"><span>Live Preview ↗</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="project-content">
-            <p class="project-index">02 · Inventory SaaS</p>
-            <h3>Stock Room</h3>
-            <p>A multi-industry inventory platform for retail, wholesale, clothing, pharmacy, grocery, hardware, and other businesses.</p>
-            <ul class="project-points">
-              <li>Inventory, suppliers, customers, orders, POS billing, payments, and returns</li>
-              <li>Reports, low-stock alerts, and bulk product import</li>
-              <li>Business-level data isolation and role-based team access</li>
-            </ul>
-            <p class="tech-list">React.js · Vite · Node.js · Express.js · MongoDB Atlas</p>
-            <a class="btn primary" href="https://inventory.aflix.co.in/" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
-
-        <article class="project-card featured">
-          <div class="project-visual">
-            <div class="project-preview-mockup">
-              <div class="project-mockup-header">
-                <div class="mockup-dot red"></div>
-                <div class="mockup-dot yellow"></div>
-                <div class="mockup-dot green"></div>
-                <div class="mockup-url">soleflowww.vercel.app</div>
-                <a class="mockup-btn" href="https://soleflowww.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open SoleFlow live site">↗</a>
-              </div>
-              <div class="project-mockup-screen">
-                <img src="preview-soleflow.png" alt="SoleFlow platform preview" loading="lazy" width="1280" height="800">
-                <div class="project-preview-overlay"><span>Live Preview ↗</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="project-content">
-            <p class="project-index">03 · B2B Footwear Trade & CRM</p>
-            <h3>SoleFlow</h3>
-            <p>An enterprise B2B footwear trade management and CRM platform engineered for wholesale distributors, shoe manufacturers, and sales networks to streamline complex wholesale operations.</p>
-            <ul class="project-points">
-              <li>Wholesale catalog, live order lifecycle tracking, inventory sync, and dealer dispatches</li>
-              <li>Multi-tier access control (Super Admin, Admin/Owner, Salesman) with instant 1-click demo login</li>
-              <li>Party ledgers, bulk invoice generation, automated payment tracking, and analytics dashboard</li>
-            </ul>
-            <p class="tech-list">React.js · Vite · Node.js · Express.js · REST APIs · Tailwind CSS</p>
-            <a class="btn primary" href="https://soleflowww.vercel.app/" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
-
-        <article class="project-card featured reverse">
-          <div class="project-visual">
-            <div class="project-preview-mockup">
-              <div class="project-mockup-header">
-                <div class="mockup-dot red"></div>
-                <div class="mockup-dot yellow"></div>
-                <div class="mockup-dot green"></div>
-                <div class="mockup-url">trinetrarealty.vercel.app</div>
-                <a class="mockup-btn" href="https://trinetrarealty.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Trinetra Realty live site">↗</a>
-              </div>
-              <div class="project-mockup-screen">
-                <img src="preview-trinetra.png" alt="Trinetra Realty platform preview" loading="lazy" width="1280" height="800">
-                <div class="project-preview-overlay"><span>Live Preview ↗</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="project-content">
-            <p class="project-index">04 · PropTech & Architectural Real Estate</p>
-            <h3>Trinetra Realty</h3>
-            <p>A comprehensive architectural real estate and property advisory platform featuring luxury property showcases, interactive comparison tools, and automated buyer-seller consultation workflows.</p>
-            <ul class="project-points">
-              <li>Multi-category property search (Buy, Rent, Sell, Commercial) with dynamic filtering and amenity views</li>
-              <li>Interactive side-by-side property comparison matrix and dynamic EMI amortization calculator</li>
-              <li>Locality intelligence scoring, client desk inquiry capture, and administrative property management</li>
-            </ul>
-            <p class="tech-list">React.js · Vite · Modern UI · Lucide Icons · Vercel</p>
-            <a class="btn primary" href="https://trinetrarealty.vercel.app/" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
-
-        <article class="project-card featured">
-          <div class="project-visual">
-            <div class="project-preview-mockup">
-              <div class="project-mockup-header">
-                <div class="mockup-dot red"></div>
-                <div class="mockup-dot yellow"></div>
-                <div class="mockup-dot green"></div>
-                <div class="mockup-url">service-assist-omega.vercel.app</div>
-                <a class="mockup-btn" href="https://landing-page-for-the-service-assist-omega.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Service Assist live site">↗</a>
-              </div>
-              <div class="project-mockup-screen">
-                <img src="preview-service-assist.png" alt="Service Assist platform preview" loading="lazy" width="1280" height="800">
-                <div class="project-preview-overlay"><span>Live Preview ↗</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="project-content">
-            <p class="project-index">05 · On-Demand Home Services</p>
-            <h3>Service Assist</h3>
-            <p>An on-demand home maintenance service platform delivering doorstep technical help—connecting residents with verified electricians, plumbers, appliance technicians, and cleaning specialists in minutes.</p>
-            <ul class="project-points">
-              <li>Fast category-based service booking with instant pricing estimates and transparent fee breakdown</li>
-              <li>Location-aware provider dispatch (Delhi NCR) with safety-verified technician badging</li>
-              <li>Interactive service search, customer review showcase, and technician partner onboarding portal</li>
-            </ul>
-            <p class="tech-list">React.js · Vite · Tailwind CSS · Modern UI/UX · Vercel</p>
-            <a class="btn primary" href="https://landing-page-for-the-service-assist-omega.vercel.app/" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
-
-        <article class="project-card featured reverse">
-          <div class="project-visual">
-            <div class="project-preview-mockup">
-              <div class="project-mockup-header">
-                <div class="mockup-dot red"></div>
-                <div class="mockup-dot yellow"></div>
-                <div class="mockup-dot green"></div>
-                <div class="mockup-url">spaceandinnovatives-sage.vercel.app</div>
-                <a class="mockup-btn" href="https://spaceandinnovatives-sage.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Space and Innovative live site">↗</a>
-              </div>
-              <div class="project-mockup-screen">
-                <img src="preview-space-innovatives.png" alt="Space and Innovative platform preview" loading="lazy" width="1280" height="800">
-                <div class="project-preview-overlay"><span>Live Preview ↗</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="project-content">
-            <p class="project-index">06 · Civil & Structural Engineering</p>
-            <h3>Space and Innovative</h3>
-            <p>A corporate engineering consultancy platform for chartered civil and structural designers specializing in high-rise RCC frames, PEB industrial structures, and seismic-resistant compliance.</p>
-            <ul class="project-points">
-              <li>Interactive 3D FEA (Finite Element Analysis) solver visualizer with dynamic load combination toggles</li>
-              <li>Dynamic engineering fee estimation calculator and instant client quotation generator</li>
-              <li>Technical service portfolio with IS 1893 seismic compliance and municipal approval specifications</li>
-            </ul>
-            <p class="tech-list">React.js · Three.js / 3D Canvas · Space Grotesk · CSS Grid · Vercel</p>
-            <a class="btn primary" href="https://spaceandinnovatives-sage.vercel.app/" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="hobbies" class="section-grid">
-      <div><p class="section-label">Beyond technology</p><h2>Long roads build patience and perspective.</h2></div>
-      <div class="passion-card carousel" id="spitiCarousel" aria-roledescription="carousel" aria-label="Spiti Valley journey photos">
-        <div class="carousel-viewport">
-          <div class="carousel-track">
-            <div class="carousel-slide" aria-label="1 of 6"><img src="spiti-portrait.jpeg" alt="Ajay standing against a mountain landscape"></div>
-            <div class="carousel-slide" aria-label="2 of 6"><img src="SPITI1.jpg" alt="Ajay and a fellow rider with motorcycles in Spiti Valley" loading="lazy"></div>
-            <div class="carousel-slide" aria-label="3 of 6"><img src="spiti-road.jpeg" alt="A winding mountain road through a rocky valley" loading="lazy"></div>
-            <div class="carousel-slide" aria-label="4 of 6"><img src="spiti-camp.jpeg" alt="A mountain campsite with motorcycles and a tent" loading="lazy"></div>
-            <div class="carousel-slide" aria-label="5 of 6"><img src="spiti-riders.jpeg" alt="Two motorcycle riders during the mountain journey" loading="lazy"></div>
-            <div class="carousel-slide" aria-label="6 of 6"><img src="spiti-group.jpeg" alt="A group of travelers with motorcycles in the mountains" loading="lazy"></div>
-          </div>
-          <button class="carousel-control previous" type="button" aria-label="Show previous photo">‹</button>
-          <button class="carousel-control next" type="button" aria-label="Show next photo">›</button>
-          <div class="carousel-dots" aria-label="Choose a photo"></div>
+        <div class="portrait-frame">
+          <img class="avatar" src="portfolio image.jpg" alt="Portrait of Ajay Dhakrey" width="700" height="875">
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
-    <section id="contact" class="contact-section">
-      <p class="section-label">Let’s connect</p><h2>Have a MERN role or project in mind?</h2><p>I’m open to full-stack development opportunities and conversations about useful web products.</p>
-      <div class="actions contact-actions"><a class="btn primary" href="mailto:dhakreyajay1356@gmail.com?subject=Portfolio%20enquiry">Send an email</a><a class="btn" href="https://www.linkedin.com/in/ajay-dhakrey-7a212a1a1/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a class="text-link" href="tel:+918077815522">Call me</a></div>
-    </section>
+    <!-- MAIN BODY SECTIONS - Styled precisely after reference design -->
+    <div class="portfolio-content-body">
+
+      <!-- SECTION 1: ABOUT ME -->
+      <section id="about" class="page-section">
+        <div class="section-inner container">
+          <div class="about-flex-layout">
+            <div class="about-left-col">
+              <p class="section-eyebrow-tag"><span class="tag-bar">——</span> ABOUT ME</p>
+              <h2 class="serif-headline">A Computer Science graduate who loves <em>building web apps.</em></h2>
+              <p class="about-bio-text">
+                I'm a MERN Stack Developer with hands-on experience in building and deploying real-world applications. I enjoy working on full-stack projects, turning ideas into functional products and continuously learning new technologies to grow as a developer.
+              </p>
+              <div class="about-meta-stack">
+                <div class="about-meta-card">
+                  <div class="meta-icon-bubble">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                      <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                    </svg>
+                  </div>
+                  <div class="meta-card-text">
+                    <strong>B.Tech (CS)</strong>
+                    <span>GLA University (2021 – 2025)</span>
+                  </div>
+                </div>
+
+                <div class="about-meta-card">
+                  <div class="meta-icon-bubble">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                  </div>
+                  <div class="meta-card-text">
+                    <strong>Noida</strong>
+                    <span>Uttar Pradesh</span>
+                  </div>
+                </div>
+
+                <div class="about-meta-card">
+                  <div class="meta-icon-bubble">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </div>
+                  <div class="meta-card-text">
+                    <strong>dhakreyajay1356@gmail.com</strong>
+                    <span>+91 8077815522</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-right-col">
+              <div class="core-strengths-card">
+                <h3>Core Strengths</h3>
+                <ul class="strengths-checklist">
+                  <li>
+                    <span class="strength-bullet">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </span>
+                    <span>Full Stack Development</span>
+                  </li>
+                  <li>
+                    <span class="strength-bullet">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </span>
+                    <span>Problem Solving</span>
+                  </li>
+                  <li>
+                    <span class="strength-bullet">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </span>
+                    <span>Clean &amp; Maintainable Code</span>
+                  </li>
+                  <li>
+                    <span class="strength-bullet">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </span>
+                    <span>Team Collaboration</span>
+                  </li>
+                  <li>
+                    <span class="strength-bullet">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </span>
+                    <span>Continuous Learning</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="sticker-wrapper sticker-together-pos" aria-hidden="true">
+                <div class="handwritten-sticker">
+                  <span class="sticker-line">Build</span>
+                  <span class="sticker-line">Better</span>
+                  <span class="sticker-line">Together</span>
+                  <svg class="handwritten-arrow-sketch" width="56" height="42" viewBox="0 0 56 42" fill="none" stroke="#0f172a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M50 36 C34 42, 14 34, 6 14 M6 14 L16 12 M6 14 L9 24"></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: TECH STACK -->
+      <section id="skills" class="page-section">
+        <div class="section-inner container">
+          <p class="section-eyebrow-tag"><span class="tag-bar">——</span> TECH STACK</p>
+          <h2 class="section-clean-title">Technologies I work with</h2>
+          <div class="tech-cards-grid">
+            <!-- MongoDB -->
+            <div class="tech-badge-card">
+              <div class="tech-icon-container">
+                <svg width="38" height="38" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2C12 2 7 8 7 14C7 17.5 9 20 12 22C15 20 17 17.5 17 14C17 8 12 2 12 2Z" fill="#13AA52"/>
+                  <path d="M12 2V22C12 22 12.5 21 13 18C13.5 15 13 13 12 2Z" fill="#116149"/>
+                </svg>
+              </div>
+              <h3 class="tech-name">MongoDB</h3>
+              <p class="tech-role">Database</p>
+            </div>
+
+            <!-- Express.js -->
+            <div class="tech-badge-card">
+              <div class="tech-icon-container">
+                <span class="express-badge-text">ex</span>
+              </div>
+              <h3 class="tech-name">Express.js</h3>
+              <p class="tech-role">Backend Framework</p>
+            </div>
+
+            <!-- React -->
+            <div class="tech-badge-card">
+              <div class="tech-icon-container">
+                <svg width="38" height="38" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="2.2" fill="#00D8FF"/>
+                  <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#00D8FF" stroke-width="1.5" transform="rotate(0 12 12)"/>
+                  <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#00D8FF" stroke-width="1.5" transform="rotate(60 12 12)"/>
+                  <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#00D8FF" stroke-width="1.5" transform="rotate(120 12 12)"/>
+                </svg>
+              </div>
+              <h3 class="tech-name">React</h3>
+              <p class="tech-role">Frontend Library</p>
+            </div>
+
+            <!-- Node.js -->
+            <div class="tech-badge-card">
+              <div class="tech-icon-container">
+                <svg width="38" height="38" viewBox="0 0 24 24" fill="none">
+                  <polygon points="12,2 21,7.2 21,17.8 12,23 3,17.8 3,7.2" fill="#539E43"/>
+                  <path d="M12 6L17 9V15L12 18L7 15V9L12 6Z" fill="#3E7B2E"/>
+                </svg>
+              </div>
+              <h3 class="tech-name">Node.js</h3>
+              <p class="tech-role">Runtime Environment</p>
+            </div>
+
+            <!-- JavaScript -->
+            <div class="tech-badge-card">
+              <div class="tech-icon-container">
+                <span class="js-badge-text">JS</span>
+              </div>
+              <h3 class="tech-name">JavaScript</h3>
+              <p class="tech-role">Programming Language</p>
+            </div>
+
+            <!-- Git & GitHub -->
+            <div class="tech-badge-card">
+              <div class="tech-icon-container">
+                <svg width="38" height="38" viewBox="0 0 24 24" fill="none">
+                  <path d="M2.6 10.6L10.6 2.6C11.4 1.8 12.6 1.8 13.4 2.6L21.4 10.6C22.2 11.4 22.2 12.6 21.4 13.4L13.4 21.4C12.6 22.2 11.4 22.2 10.6 21.4L2.6 13.4C1.8 12.6 1.8 11.4 2.6 10.6Z" fill="#F05032"/>
+                  <circle cx="12" cy="7" r="2" fill="#FFFFFF"/>
+                  <circle cx="12" cy="17" r="2" fill="#FFFFFF"/>
+                  <circle cx="16" cy="12" r="2" fill="#FFFFFF"/>
+                  <path d="M12 9V15 M12 12H14" stroke="#FFFFFF" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <h3 class="tech-name">Git &amp; GitHub</h3>
+              <p class="tech-role">Version Control</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: FEATURED PROJECTS -->
+      <section id="projects" class="page-section">
+        <div class="section-inner container">
+          <div class="projects-section-header">
+            <div>
+              <p class="section-eyebrow-tag"><span class="tag-bar">——</span> MY PROJECTS</p>
+              <h2 class="section-clean-title">Featured Projects</h2>
+            </div>
+            <a class="view-all-projects-link" href="https://github.com/AjayDhakrey" target="_blank" rel="noopener noreferrer">
+              View all projects <span class="arrow-glyph">➔</span>
+            </a>
+          </div>
+
+          <div class="featured-projects-grid">
+            <!-- Project 1: Stock Room -->
+            <article class="featured-project-card">
+              <div class="project-screenshot-box">
+                <img src="preview-stockroom.png" alt="Stock Room platform screenshot" loading="eager" width="1280" height="800">
+              </div>
+              <div class="project-details">
+                <h3 class="project-heading">Stock Room</h3>
+                <p class="project-summary">A complete inventory management system for small and medium businesses. Track stock, manage products, handle sales and get real-time insights.</p>
+                <div class="tech-tags-list">
+                  <span class="tag-pill">React</span>
+                  <span class="tag-pill">Node.js</span>
+                  <span class="tag-pill">MongoDB</span>
+                  <span class="tag-pill">Express</span>
+                </div>
+                <a class="view-project-action" href="https://inventory.aflix.co.in/" target="_blank" rel="noopener noreferrer">
+                  View Project <span class="action-arrow">➔</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 2: SchoolSphere -->
+            <article class="featured-project-card">
+              <div class="project-screenshot-box">
+                <img src="preview-schoolsphere.png" alt="SchoolSphere platform screenshot" loading="eager" width="1280" height="800">
+              </div>
+              <div class="project-details">
+                <h3 class="project-heading">SchoolSphere</h3>
+                <p class="project-summary">A school CRM with role-based access, fees, exams, library and more. Built with a clean and simple UI for schools and students.</p>
+                <div class="tech-tags-list">
+                  <span class="tag-pill">React</span>
+                  <span class="tag-pill">TypeScript</span>
+                  <span class="tag-pill">Supabase</span>
+                  <span class="tag-pill">PostgreSQL</span>
+                </div>
+                <a class="view-project-action" href="https://school.aflix.co.in/login" target="_blank" rel="noopener noreferrer">
+                  View Project <span class="action-arrow">➔</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 3: SoleFlow -->
+            <article class="featured-project-card">
+              <div class="project-screenshot-box">
+                <img src="preview-soleflow.png" alt="SoleFlow platform screenshot" loading="eager" width="1280" height="800">
+              </div>
+              <div class="project-details">
+                <h3 class="project-heading">SoleFlow</h3>
+                <p class="project-summary">A B2B footwear platform with orders, payments and customer management. Designed for a smooth and clutter-free experience.</p>
+                <div class="tech-tags-list">
+                  <span class="tag-pill">React</span>
+                  <span class="tag-pill">Node.js</span>
+                  <span class="tag-pill">MongoDB</span>
+                  <span class="tag-pill">Express</span>
+                </div>
+                <a class="view-project-action" href="https://soleflowww.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  View Project <span class="action-arrow">➔</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 4: Trinetra Realty -->
+            <article class="featured-project-card">
+              <div class="project-screenshot-box">
+                <img src="preview-trinetra.png" alt="Trinetra Realty platform screenshot" loading="eager" width="1280" height="800">
+              </div>
+              <div class="project-details">
+                <h3 class="project-heading">Trinetra Realty</h3>
+                <p class="project-summary">Real estate CRM with property listings, enquiry management and admin panel. Built for builders, brokers and consultants.</p>
+                <div class="tech-tags-list">
+                  <span class="tag-pill">React</span>
+                  <span class="tag-pill">Node.js</span>
+                  <span class="tag-pill">MongoDB</span>
+                  <span class="tag-pill">Express</span>
+                </div>
+                <a class="view-project-action" href="https://trinetrarealty.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  View Project <span class="action-arrow">➔</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 5: Service Assist -->
+            <article class="featured-project-card">
+              <div class="project-screenshot-box">
+                <img src="preview-service-assist.png" alt="Service Assist platform screenshot" loading="eager" width="1280" height="800">
+              </div>
+              <div class="project-details">
+                <h3 class="project-heading">Service Assist</h3>
+                <p class="project-summary">On-demand home maintenance service platform connecting residents with verified technicians for quick, reliable doorstep assistance.</p>
+                <div class="tech-tags-list">
+                  <span class="tag-pill">React</span>
+                  <span class="tag-pill">Tailwind CSS</span>
+                  <span class="tag-pill">REST APIs</span>
+                  <span class="tag-pill">Vercel</span>
+                </div>
+                <a class="view-project-action" href="https://landing-page-for-the-service-assist-omega.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  View Project <span class="action-arrow">➔</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 6: Space and Innovative -->
+            <article class="featured-project-card">
+              <div class="project-screenshot-box">
+                <img src="preview-space-innovatives.png" alt="Space and Innovative platform screenshot" loading="eager" width="1280" height="800">
+              </div>
+              <div class="project-details">
+                <h3 class="project-heading">Space and Innovative</h3>
+                <p class="project-summary">Civil &amp; structural engineering consultancy platform with interactive 3D FEA visualizer, engineering fee estimators, and structural portfolio.</p>
+                <div class="tech-tags-list">
+                  <span class="tag-pill">React</span>
+                  <span class="tag-pill">Three.js</span>
+                  <span class="tag-pill">CSS Grid</span>
+                  <span class="tag-pill">Vercel</span>
+                </div>
+                <a class="view-project-action" href="https://spaceandinnovatives-sage.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  View Project <span class="action-arrow">➔</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 7: Coming Soon Card -->
+            <article class="featured-project-card coming-soon-scenic-card">
+              <div class="coming-soon-body">
+                <div class="coming-soon-crest">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L15 8.5L22 9.3L17 14.1L18.2 21L12 17.7L5.8 21L7 14.1L2 9.3L9 8.5L12 2Z"/>
+                  </svg>
+                </div>
+                <h3 class="coming-soon-title">More Projects<br>Coming Soon...</h3>
+                <p class="coming-soon-text">Stay tuned for more exciting projects and updates.</p>
+                <a class="coming-soon-round-btn" href="https://github.com/AjayDhakrey" target="_blank" rel="noopener noreferrer" aria-label="Explore more projects on GitHub">
+                  ➔
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: MY EXPERIENCE -->
+      <section id="experience" class="page-section">
+        <div class="section-inner container">
+          <div class="experience-flex-layout">
+            <div class="experience-left-col">
+              <p class="section-eyebrow-tag"><span class="tag-bar">——</span> MY EXPERIENCE</p>
+              <h2 class="serif-headline">Turning ideas into <em>real solutions.</em></h2>
+              <p class="experience-lead-text">
+                As a MERN Stack Developer, I've worked on multiple projects, from building features to deploying them in production. I focus on writing clean code, solving real problems and continuously improving my skills.
+              </p>
+              <a class="resume-emerald-btn" href="AJAY-DHAKREY-MERN-STACK-DEVELOPER.pdf" target="_blank" rel="noopener">
+                View Résumé <span class="btn-arrow">➔</span>
+              </a>
+            </div>
+
+            <div class="experience-right-col">
+              <div class="metrics-quad-grid">
+                <!-- Metric 1 -->
+                <div class="metric-highlight-card">
+                  <div class="metric-icon-wrap code-brackets">&lt;/&gt;</div>
+                  <div class="metric-big-number">6+</div>
+                  <p class="metric-sublabel">Projects Completed</p>
+                </div>
+
+                <!-- Metric 2 -->
+                <div class="metric-highlight-card">
+                  <div class="metric-icon-wrap">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                  </div>
+                  <div class="metric-big-number">MERN</div>
+                  <p class="metric-sublabel">Production Stacks</p>
+                </div>
+
+                <!-- Metric 3 -->
+                <div class="metric-highlight-card">
+                  <div class="metric-icon-wrap">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                  </div>
+                  <div class="metric-big-number">1+</div>
+                  <p class="metric-sublabel">Internships &amp; Training</p>
+                </div>
+
+                <!-- Metric 4 -->
+                <div class="metric-highlight-card">
+                  <div class="metric-icon-wrap">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                      <line x1="8" y1="21" x2="16" y2="21"></line>
+                      <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                  </div>
+                  <div class="metric-big-number">100%</div>
+                  <p class="metric-sublabel">Learning Mindset</p>
+                </div>
+              </div>
+
+              <div class="sticker-wrapper sticker-goals-pos" aria-hidden="true">
+                <div class="handwritten-sticker goals-sticker">
+                  <span class="sticker-line">Small</span>
+                  <span class="sticker-line">Steps</span>
+                  <span class="sticker-line">Big Goals.</span>
+                  <svg class="goals-sketch-squiggle" width="62" height="18" viewBox="0 0 62 18" fill="none" stroke="#0d9488" stroke-width="2.2" stroke-linecap="round">
+                    <path d="M2 12 Q 16 2, 32 12 T 60 10"></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: GET IN TOUCH -->
+      <section id="contact" class="page-section contact-outer-section">
+        <div class="section-inner container">
+          <div class="contact-dark-card">
+            <div class="contact-card-content">
+              <div class="contact-card-left">
+                <p class="contact-tag-badge">—— GET IN TOUCH</p>
+                <h2 class="contact-title-white">Have a project in mind?</h2>
+                <p class="contact-card-sub">I'm always open to discussing new opportunities, collaborations or just a friendly chat.</p>
+                <a class="lets-talk-pill-btn" href="mailto:dhakreyajay1356@gmail.com">
+                  Let's Talk <span class="talk-arrow">↗</span>
+                </a>
+              </div>
+
+              <div class="contact-card-right">
+                <ul class="contact-channels-list">
+                  <li>
+                    <span class="channel-emoji">✉️</span>
+                    <a href="mailto:dhakreyajay1356@gmail.com">dhakreyajay1356@gmail.com</a>
+                  </li>
+                  <li>
+                    <span class="channel-emoji">📞</span>
+                    <a href="tel:+918077815522">+91 8077815522</a>
+                  </li>
+                  <li>
+                    <span class="channel-emoji">📍</span>
+                    <span>Noida, Uttar Pradesh</span>
+                  </li>
+                </ul>
+
+                <div class="contact-social-icons">
+                  <a href="https://github.com/AjayDhakrey" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                  </a>
+                  <a href="https://www.linkedin.com/in/ajay-dhakrey-7a212a1a1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </a>
+                  <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X profile">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <div class="sticker-wrapper sticker-great-pos" aria-hidden="true">
+                <div class="handwritten-sticker sticker-white-theme">
+                  <span class="sticker-line">Let's</span>
+                  <span class="sticker-line">Build</span>
+                  <span class="sticker-line">Something</span>
+                  <span class="sticker-line">Great!</span>
+                  <svg class="great-sketch-arrow" width="56" height="42" viewBox="0 0 56 42" fill="none" stroke="#2dd4bf" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 8 C14 2, 42 10, 48 30 M48 30 L40 32 M48 30 L46 22"></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </main>
 
-  <footer class="container"><small>© <span id="year"></span> Ajay Dhakrey</small><div><a href="mailto:dhakreyajay1356@gmail.com">Email</a><a href="https://github.com/AjayDhakrey" target="_blank" rel="noopener noreferrer">GitHub</a><a href="AJAY-DHAKREY-MERN-STACK-DEVELOPER.pdf" target="_blank" rel="noopener">Résumé</a></div></footer>
+  <!-- FOOTER -->
+  <footer class="site-main-footer">
+    <div class="footer-container container">
+      <div class="footer-brand-side">
+        <a class="brand" href="#home" aria-label="Ajay Dhakrey, home">
+          <span class="brand-mark">AD</span>
+          <span>Ajay Dhakrey</span>
+        </a>
+      </div>
+      <div class="footer-center-copy">
+        <p>© <span id="year">2026</span> Ajay Dhakrey. All rights reserved.</p>
+      </div>
+      <div class="footer-nav-side">
+        <nav class="footer-links-row" aria-label="Footer navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a class="scroll-top-round-btn" href="#home" aria-label="Back to top">
+          ↑
+        </a>
+      </div>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
