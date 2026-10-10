@@ -312,8 +312,8 @@ body.light .hero-summary {
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 20px 24px;
-  margin-top: 36px;
+  padding: 14px 20px;
+  margin-top: 24px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 body.light .hero-facts {
@@ -332,21 +332,82 @@ body.light .hero-facts {
   box-shadow: 0 22px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(104, 228, 194, 0.12);
 }
 
+/* 100% screen size viewport containment: Hero fits completely at once */
+@media(min-width: 901px) {
+  .hero {
+    min-height: calc(100vh - 72px) !important;
+    height: calc(100vh - 72px) !important;
+    max-height: calc(100vh - 72px) !important;
+    padding-block: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.45fr) minmax(220px, 0.55fr) !important;
+    align-items: center !important;
+    align-content: center !important;
+    gap: clamp(24px, 4vw, 54px) !important;
+    box-sizing: border-box !important;
+    overflow: hidden;
+  }
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hero-copy .eyebrow {
+    margin-bottom: clamp(8px, 1.2vh, 14px) !important;
+  }
+  .hero-copy h1 {
+    font-size: clamp(2rem, 3.2vw, 3.3rem) !important;
+    line-height: 1.14;
+    margin-bottom: clamp(8px, 1.4vh, 16px) !important;
+    max-width: 740px;
+  }
+  .hero-summary {
+    font-size: clamp(0.92rem, 1.05vw, 1.05rem) !important;
+    line-height: 1.52;
+    max-width: 620px;
+  }
+  .actions {
+    margin-top: clamp(12px, 1.8vh, 20px) !important;
+    gap: 10px;
+  }
+  .actions .btn {
+    min-height: 42px;
+    padding: 8px 16px;
+    font-size: 0.92rem;
+  }
+  .hero-facts {
+    margin-top: clamp(12px, 2vh, 22px) !important;
+    padding: clamp(10px, 1.4vh, 14px) 18px !important;
+    gap: 20px;
+  }
+  .portrait-frame {
+    width: min(320px, 100%);
+    justify-self: end;
+  }
+  .portrait-frame .avatar {
+    max-height: clamp(280px, 46vh, 440px) !important;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border-radius: 24px;
+  }
+}
+
 @media(max-width:900px) {
-  .hero-video-media {
-    object-position: center center;
+  .hero {
+    min-height: auto;
+    padding-top: 40px;
+    padding-bottom: 48px;
   }
-  .hero-video-scrim {
-    background:
-      linear-gradient(180deg, rgba(9, 13, 22, 0.88) 0%, rgba(9, 13, 22, 0.85) 60%, rgba(9, 13, 22, 0.95) 100%);
+  .portrait-frame {
+    margin-inline: auto;
   }
-  body.light .hero-video-scrim {
-    background:
-      linear-gradient(180deg, rgba(244, 247, 251, 0.92) 0%, rgba(244, 247, 251, 0.9) 60%, rgba(244, 247, 251, 0.98) 100%);
+  .portrait-frame .avatar {
+    max-height: 380px;
   }
 }
 @media(prefers-reduced-motion:reduce) {
-  .hero-video-media,
   .hero-glow-orb,
   .pulse-indicator {
     animation: none !important;
