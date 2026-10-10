@@ -196,12 +196,12 @@ body.light .project-card:focus-within .project-preview-mockup {
   }
 }
 
-/* Hero section 3D video backdrop & content visibility */
+/* Hero section 3D cyber canvas & content visibility */
 .hero {
   position: relative;
   isolation: isolate;
 }
-.hero-video-backdrop {
+.hero-cyber-stage {
   position: absolute;
   top: -24px;
   bottom: 0;
@@ -212,58 +212,27 @@ body.light .project-card:focus-within .project-preview-mockup {
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
-  perspective: 1200px;
 }
-.hero-video-media {
+#heroCyberCanvas {
   position: absolute;
-  inset: -5%;
-  width: 110%;
-  height: 110%;
-  object-fit: cover;
-  object-position: 70% center;
-  filter: contrast(1.15) brightness(0.65) saturate(1.25);
-  image-rendering: -webkit-optimize-contrast;
-  transform: translateZ(0);
-  will-change: transform, filter;
-  animation: hero3DLoop 14s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
-body.light .hero-video-media {
-  filter: contrast(1.1) brightness(0.78) saturate(1.18);
-  opacity: 0.38;
-}
-
-@keyframes hero3DLoop {
-  0% {
-    transform: perspective(1200px) rotateX(0deg) rotateY(0deg) scale(1.02) translateZ(0);
-  }
-  25% {
-    transform: perspective(1200px) rotateX(1.4deg) rotateY(-2deg) scale(1.05) translateZ(18px);
-  }
-  50% {
-    transform: perspective(1200px) rotateX(-0.8deg) rotateY(1.8deg) scale(1.035) translateZ(10px);
-  }
-  75% {
-    transform: perspective(1200px) rotateX(-1.6deg) rotateY(-1.2deg) scale(1.05) translateZ(22px);
-  }
-  100% {
-    transform: perspective(1200px) rotateX(0.9deg) rotateY(1.2deg) scale(1.03) translateZ(8px);
-  }
-}
-
-.hero-video-scrim {
+.hero-cyber-scrim {
   position: absolute;
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(90deg, rgba(9, 13, 22, 0.96) 0%, rgba(9, 13, 22, 0.90) 38%, rgba(9, 13, 22, 0.65) 70%, rgba(9, 13, 22, 0.45) 100%),
-    linear-gradient(180deg, rgba(9, 13, 22, 0.5) 0%, transparent 20%, rgba(9, 13, 22, 0.95) 100%);
-  backdrop-filter: blur(1.5px);
-  -webkit-backdrop-filter: blur(1.5px);
+    linear-gradient(90deg, rgba(9, 13, 22, 0.84) 0%, rgba(9, 13, 22, 0.70) 38%, rgba(9, 13, 22, 0.25) 68%, transparent 100%),
+    linear-gradient(180deg, rgba(9, 13, 22, 0.25) 0%, transparent 35%, rgba(9, 13, 22, 0.9) 100%);
+  pointer-events: none;
 }
-body.light .hero-video-scrim {
+body.light .hero-cyber-scrim {
   background:
-    linear-gradient(90deg, rgba(244, 247, 251, 0.97) 0%, rgba(244, 247, 251, 0.92) 42%, rgba(244, 247, 251, 0.7) 75%, rgba(244, 247, 251, 0.5) 100%),
-    linear-gradient(180deg, rgba(244, 247, 251, 0.4) 0%, transparent 20%, rgba(244, 247, 251, 0.98) 100%);
+    linear-gradient(90deg, rgba(244, 247, 251, 0.9) 0%, rgba(244, 247, 251, 0.75) 42%, rgba(244, 247, 251, 0.3) 75%, transparent 100%),
+    linear-gradient(180deg, rgba(244, 247, 251, 0.25) 0%, transparent 35%, rgba(244, 247, 251, 0.9) 100%);
 }
 
 .hero-glow-orb {
